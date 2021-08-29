@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import FacePayBar from './components/FacePayBar'
+import 
+{ Switch, Route } from 'react-router-dom'
+import Payment from './Routes/Payment'
+import MerchantRegister from './Routes/MerchantRegister'
+import UserRegister from './Routes/UserRegister'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FacePayBar />
+      <Switch>
+        <Route exact path="/" component={Payment}/> 
+        <Route exact path="/merchantRegister" component={MerchantRegister}/> 
+        <Route exact path="/userRegsiter" component={UserRegister}/> 
+      </Switch>
     </div>
   );
 }
